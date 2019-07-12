@@ -68,6 +68,7 @@ def get_this_page_tweets(soup):
                 ['time', parent.find('a', 'tweet-timestamp')['title']],
                 ['no-of-replies', parent.find('span', 'ProfileTweet-actionCount').text.strip()],
                 ['tweet', parent.find('p', 'tweet-text').text.encode('utf-8')],
+                ['likes', parent.find('span', 'ProfileTweet-action--favorite').text.strip()],
                 ['retweets', parent.find('span','ProfileTweet-action--retweet').text.strip()]]
         tweets_list.append(ptweet)
         
@@ -81,6 +82,7 @@ def get_this_page_tweets(soup):
                     ['time', container.find('a', 'tweet-timestamp')['title']],
                     ['no-of-replies', container.find('span', 'ProfileTweet-actionCount').text.strip()],
                     ['reply-tweet', container.find('p', 'tweet-text').text.encode('utf-8')],
+                    ['likes', container.find('span', 'ProfileTweet-action--favorite').text.strip()],
                     ['retweets', container.find('span','ProfileTweet-action--retweet').text.strip()]]
                 replies.append(tweetdata)
         tweets_list.append(replies)
