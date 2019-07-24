@@ -87,7 +87,6 @@ def get_this_page_tweets(soup):
         ptweet['replies']=replies
         #tweets_list.append(replies)
         #tweets_list.append('x x x x x x x x x x x x x x x x x x x x x x x x x x x')
-        break
         """
         Likes = page_soup.findAll("div",{"class":"stream-item-footer"})
         like = Likes[0].find("span",{"class":"ProfileTweet-actionCount"})
